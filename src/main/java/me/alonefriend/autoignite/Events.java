@@ -12,11 +12,11 @@ import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityExplodeEvent;
 import org.bukkit.event.entity.ExplosionPrimeEvent;
 
-public class EventListener implements Listener {
+public class Events implements Listener {
 
     private Main plugin;
 
-    public EventListener(Main main) {
+    public Events(Main main) {
         plugin = main;
     }
 

@@ -8,8 +8,8 @@ public final class Main extends JavaPlugin {
     public void onEnable() {
         loadConfig();
 
-        this.getCommand("autoignite").setExecutor(new CommandHandler(this));
-        this.getServer().getPluginManager().registerEvents(new EventListener(this), this);
+        this.getCommand("autoignite").setExecutor(new Commands(this));
+        this.getServer().getPluginManager().registerEvents(new Events(this), this);
 
         getLogger().info(getDescription().getFullName() + " has been enabled.");
     }
