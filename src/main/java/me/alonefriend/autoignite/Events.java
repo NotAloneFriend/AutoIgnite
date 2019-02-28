@@ -2,7 +2,6 @@ package me.alonefriend.autoignite;
 
 import org.bukkit.Material;
 import org.bukkit.block.Block;
-import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.TNTPrimed;
@@ -10,7 +9,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
-import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityExplodeEvent;
 import org.bukkit.event.entity.ExplosionPrimeEvent;
 
@@ -41,7 +39,7 @@ public class Events implements Listener {
     @EventHandler
     public void onEntityExplode(EntityExplodeEvent event) {
         if (plugin.getConfig().getBoolean("enabled") && event.getEntityType() == EntityType.PRIMED_TNT) {
-            if (!plugin.getConfig().getBoolean("destroy-blocks")) {
+            if (!plugin.getConfig().getBoolean("destroy-blocks", false)) {
                 event.blockList().clear();
             }
         }
@@ -50,15 +48,15 @@ public class Events implements Listener {
     @EventHandler
     public void onExplosion(ExplosionPrimeEvent event) {
         if (plugin.getConfig().getBoolean("enabled") && event.getEntityType() == EntityType.PRIMED_TNT) {
-            event.setFire(plugin.getConfig().getBoolean("fire"));
-            event.setRadius(plugin.getConfig().getInt("radius"));
+            event.setFire(plugin.getConfig().getBoolean("fire", false));
+            event.setRadius(plugin.getConfig().getInt("radius", 4));
         }
     }
 
     @EventHandler
     public void EntityDamageByEntity(EntityDamageByEntityEvent event) {
         if (plugin.getConfig().getBoolean("enabled") && event.getDamager().getType() == EntityType.PRIMED_TNT) {
-            event.setDamage(plugin.getConfig().getInt("damage"));
+            event.setDamage(plugin.getConfig().getInt("damage", 4));
         }
     }
 }
