@@ -13,7 +13,6 @@ import org.bukkit.event.entity.EntityExplodeEvent;
 import org.bukkit.event.entity.ExplosionPrimeEvent;
 
 public class Events implements Listener {
-
     private Main plugin;
 
     public Events(Main main) {
