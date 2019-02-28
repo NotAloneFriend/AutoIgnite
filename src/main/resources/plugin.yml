@@ -1,0 +1,22 @@
+name: AutoIgnite
+version: ${project.version}
+main: Main
+api-version: 1.13
+authors: [YeahMe]
+description: Auto ignite.
+commands:
+  autoignite:
+    description: autoignite commands
+    usage: /autoignite <subcommand>
+permissions:
+  autoignite.*:
+    description: Gives access to all AutoIngnite commands.
+    children:
+      - autoignite.help
+      - autoignite.reload
+    autoignite.help:
+      description: Allows you to display help commands.
+      default: op
+    autoignite.reload:
+      description: Allows you to reload plugin configuration files.
+      default: op

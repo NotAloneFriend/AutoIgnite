@@ -1,0 +1,6 @@
+enabled: true
+destroy-blocks: true
+fire: false
+delay: 4
+radius: 4
+damage: 4
