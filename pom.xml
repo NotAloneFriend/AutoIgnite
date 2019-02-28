@@ -11,7 +11,7 @@
 
     <name>AutoIgnite</name>
 
-    <description>Auto ignite.</description>
+    <description>A plugin that automatically ignites TNT.</description>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
