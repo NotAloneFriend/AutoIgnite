@@ -11,12 +11,13 @@ import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityExplodeEvent;
 import org.bukkit.event.entity.ExplosionPrimeEvent;
+import org.bukkit.plugin.Plugin;
 
-public class Events implements Listener {
-    private Main plugin;
+public class TNTListener implements Listener {
+    private Plugin plugin;
 
-    public Events(Main main) {
-        plugin = main;
+    public TNTListener(AutoIgnite pl) {
+        plugin = pl;
     }
 
     @EventHandler
@@ -54,7 +55,7 @@ public class Events implements Listener {
     }
 
     @EventHandler
-    public void EntityDamageByEntity(EntityDamageByEntityEvent event) {
+    public void onEntityDamageByEntity(EntityDamageByEntityEvent event) {
         if (plugin.getConfig().getBoolean("enabled") && event.getDamager().getType() == EntityType.PRIMED_TNT) {
             event.setDamage(plugin.getConfig().getInt("damage", 4));
         }

@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>me.alonefriend.autoignite</groupId>
-    <artifactId>Main</artifactId>
+    <artifactId>AutoIgnite</artifactId>
     <version>1.0.1</version>
     <packaging>jar</packaging>
 

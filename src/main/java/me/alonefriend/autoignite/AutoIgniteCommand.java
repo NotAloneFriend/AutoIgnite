@@ -4,12 +4,13 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.plugin.Plugin;
 
-public class Commands implements CommandExecutor {
-    private Main plugin;
+public class AutoIgniteCommand implements CommandExecutor {
+    private Plugin plugin;
 
-    public Commands(Main main) {
-        plugin = main;
+    public AutoIgniteCommand(AutoIgnite pl) {
+        plugin = pl;
     }
 
     @Override
@@ -20,7 +21,7 @@ public class Commands implements CommandExecutor {
                 return true;
             }
 
-            sender.sendMessage(ChatColor.YELLOW + "--------------- Commands ---------------");
+            sender.sendMessage(ChatColor.YELLOW + "--------------- AutoIgniteCommand ---------------");
             sender.sendMessage(ChatColor.YELLOW + "/autoignite help: " + ChatColor.WHITE + "Display help for " + plugin.getDescription().getName() + " commands.");
             sender.sendMessage(ChatColor.YELLOW + "/autoignite reload: " + ChatColor.WHITE + "Reload plugin configuration.");
             return true;

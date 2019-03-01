@@ -1,6 +1,6 @@
 name: AutoIgnite
 version: ${project.version}
-main: me.alonefriend.autoignite.Main
+main: me.alonefriend.autoignite.AutoIgnite
 api-version: 1.13
 authors: [AloneFriend]
 description: Auto ignite.
