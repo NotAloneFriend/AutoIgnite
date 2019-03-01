@@ -39,11 +39,8 @@ public class TNTListener implements Listener {
 
     @EventHandler
     public void onEntityExplode(EntityExplodeEvent event) {
-        if (plugin.getConfig().getBoolean("enabled") && event.getEntityType() == EntityType.PRIMED_TNT) {
-            if (!plugin.getConfig().getBoolean("destroy-blocks", false)) {
-                event.blockList().clear();
-            }
-        }
+        if (!plugin.getConfig().getBoolean("enabled") && event.getEntityType() != EntityType.PRIMED_TNT) return;
+        if (!plugin.getConfig().getBoolean("destroy-blocks", false)) event.blockList().clear();
     }
 
     @EventHandler
