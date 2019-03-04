@@ -23,7 +23,7 @@ damage: 4
 ```
 
 ### Contact and Support
-Please use the discussion section or add me on discord, AloneFriend#6130.
+Please use the discussion section or add me on Discord, AloneFriend#6130.
 
 ### Issues & Bugs
 Please use the discussion section for issues and bug-reports. Rating the resource negatively due to a potential issue is not appropriate!
